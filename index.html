@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社くりえいと クイズ</title>
+    
+    <!-- OGP Settings -->
+    <meta property="og:title" content="株式会社くりえいと クイズ">
+    <meta property="og:description" content="くりえいとの歴史や地域での取り組みに関するインタラクティブなクイズ（全10問）に挑戦しよう！">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aoitori-family.sakura.ne.jp/quiz-test/">
+    <!-- プレースホルダーの画像（今回はComunionロゴやダミー画像など） -->
+    <meta property="og:image" content="https://comunion.jp/img/ogp.jpg">
+    <meta property="og:site_name" content="株式会社くりえいと クイズ">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-decorations">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <main class="container">
+        <!-- Start Screen -->
+        <section id="start-screen" class="card active">
+            <span class="badge">🔥 Challenge</span>
+            <h1>株式会社くりえいと<br><span class="gradient-text">クイズ 10問</span></h1>
+            <p class="description">
+                宗像市のまちづくりをリードする「株式会社くりえいと」の歴史、事業、そして未来への取り組みに関するクイズです。<br>
+                初級・中級・上級の全10問に挑戦して、あなたの「くりえいとマスター度」を測りましょう！
+            </p>
+            <button id="start-btn" class="btn btn-primary">クイズを開始する</button>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="card">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <span id="question-number">第 1 問 / 10</span>
+                    <span id="difficulty-badge" class="badge">初級</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="progress-bar-fill" class="progress-bar-fill" style="width: 10%;"></div>
+                </div>
+            </div>
+
+            <h2 id="question-text" class="question">問題文がここに入ります。</h2>
+
+            <div id="choices-container" class="choices-list">
+                <!-- 選択肢ボタンがJSで動的に挿入されます -->
+            </div>
+
+            <!-- Explanation Box (Initially Hidden) -->
+            <div id="explanation-box" class="explanation-box">
+                <div class="explanation-status">
+                    <span id="status-icon"></span>
+                    <span id="status-text">正解！</span>
+                </div>
+                <p id="explanation-text" class="explanation-desc">解説テキストがここに入ります。</p>
+                <button id="next-btn" class="btn btn-primary">次の問題へ</button>
+            </div>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="result-screen" class="card">
+            <span class="badge">🏆 Results</span>
+            <h1>クイズ結果</h1>
+            
+            <div class="result-score-container">
+                <div class="score-circle">
+                    <span id="score-number">0</span>
+                    <span class="score-total">/ 10</span>
+                </div>
+                <h2 id="rank-title" class="rank-title">くりえいとビギナー</h2>
+                <p id="rank-desc" class="rank-desc">もっと「くりえいと」のまちづくりについて調べてみましょう！</p>
+            </div>
+
+            <div class="result-actions">
+                <a id="share-btn" href="#" target="_blank" class="btn btn-share">
+                    <svg class="icon-x" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </svg>
+                    結果をXでシェアする
+                </a>
+                <button id="restart-btn" class="btn btn-secondary">もう一度挑戦する</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Comunion Co., Ltd. / Created for Quiz Challenge</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="app.js"></script>
+</body>
+</html>
