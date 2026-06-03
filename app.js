@@ -37,14 +37,14 @@ const quizData = [
     },
     {
         difficulty: "初級",
-        question: "Q4. 現在の株式会社くりえいとの親会社であり、山口県下関市に本社を置く総合建設業の企業はどこでしょうか？",
+        question: "Q4. くりえいと宗像のロゴマークや街のシンボルは、宗像市に伝わる伝説の「天馬」と、ある地域の伝統工芸品（玩具）をモチーフにしています。その伝統工芸品は何でしょうか？",
         choices: [
-            { text: "株式会社安成工務店", isCorrect: true },
-            { text: "株式会社九電工", isCorrect: false },
-            { text: "株式会社大林組", isCorrect: false },
-            { text: "東和コーポレーション", isCorrect: false }
+            { text: "きじ馬（きじ車）", isCorrect: true },
+            { text: "博多人形", isCorrect: false },
+            { text: "津屋崎人形", isCorrect: false },
+            { text: "木うそ", isCorrect: false }
         ],
-        explanation: "環境共生住宅などに強みを持つ企業であり、2010年代半ばに全株式を取得してグループ化しました。"
+        explanation: "宗像地域に古くから伝わる伝統工芸品・縁起物である木製玩具「きじ馬（きじ車）」と、伝説の天馬をシンボライズしたアイデンティティ計画が採用されています。"
     },
     {
         difficulty: "中級",
@@ -59,14 +59,14 @@ const quizData = [
     },
     {
         difficulty: "中級",
-        question: "Q6. くりえいと宗像のロゴマークは、宗像市に伝わる伝説の「天馬」と、ある地域の伝統工芸品（玩具）をモチーフにしています。その伝統工芸品は何でしょうか？",
+        question: "Q6. 2010年に「健康」「環境」「癒し」をコンセプトに新たに開業したエリアは、くりえいと何丁目でしょうか？",
         choices: [
-            { text: "きじ馬（きじ車）", isCorrect: true },
-            { text: "博多人形", isCorrect: false },
-            { text: "津屋崎人形", isCorrect: false },
-            { text: "木うそ", isCorrect: false }
+            { text: "くりえいと3丁目", isCorrect: true },
+            { text: "くりえいと1丁目", isCorrect: false },
+            { text: "くりえいと2丁目", isCorrect: false },
+            { text: "くりえいと4丁目", isCorrect: false }
         ],
-        explanation: "宗像地域に古くから伝わる伝統工芸品・縁起物である木製玩具「きじ馬（きじ車）」と、伝説の天馬をシンボライズしたアイデンティティ計画が採用されています。"
+        explanation: "2008年から始まった第2次開発により、単なる物販施設の拡張にとどまらない高付加価値なまちづくりを目指して2010年に開業しました。"
     },
     {
         difficulty: "中級",
