@@ -59,14 +59,14 @@ const quizData = [
     },
     {
         difficulty: "中級",
-        question: "Q6. 2010年に「健康」「環境」「癒し」をコンセプトに新たに開業したエリアは、くりえいと何丁目でしょうか？",
+        question: "Q6. くりえいと宗像のロゴマークは、宗像市に伝わる伝説の「天馬」と、ある地域の伝統工芸品（玩具）をモチーフにしています。その伝統工芸品は何でしょうか？",
         choices: [
-            { text: "くりえいと3丁目", isCorrect: true },
-            { text: "くりえいと1丁目", isCorrect: false },
-            { text: "くりえいと2丁目", isCorrect: false },
-            { text: "くりえいと4丁目", isCorrect: false }
+            { text: "きじ馬（きじ車）", isCorrect: true },
+            { text: "博多人形", isCorrect: false },
+            { text: "津屋崎人形", isCorrect: false },
+            { text: "木うそ", isCorrect: false }
         ],
-        explanation: "2008年から始まった第2次開発により、単なる物販施設の拡張にとどまらない高付加価値なまちづくりを目指して2010年に開業しました。"
+        explanation: "宗像地域に古くから伝わる伝統工芸品・縁起物である木製玩具「きじ馬（きじ車）」と、伝説の天馬をシンボライズしたアイデンティティ計画が採用されています。"
     },
     {
         difficulty: "中級",
@@ -300,7 +300,7 @@ function showResult() {
     
     // Set Share Link
     const shareText = `【株式会社くりえいとクイズ】10問中${score}問正解！私の「くりえいと度」は「${rankTitle.replace(/[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF]/g, '').trim()}」でした！あなたも挑戦してみませんか？`;
-    const shareUrl = 'https://aoitori-family.sakura.ne.jp/quiz-test/';
+    const shareUrl = 'https://munakata-pr.github.io/quiz-test/';
     shareBtn.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent('くりえいと,宗像市,クイズ')}`;
 }
 
