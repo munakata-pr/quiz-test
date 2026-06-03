@@ -111,6 +111,28 @@ const quizData = [
             { text: "「農福連携ローカルエコシステム」構想", isCorrect: false }
         ],
         explanation: "同社は都市再生推進法人としての役割を担いながら、多極連携の集約型都市構造を支える中心拠点として、この構想のもとに進化を続ける見込みです。"
+    },
+    {
+        difficulty: "超上級",
+        question: "Q11. 初期に行われた「土穴・須恵土地区画整理事業」の開発エリアは、中心拠点である「赤間駅周辺」と「ある区域」を結ぶ極めて重要な交通結節点でした。その「ある区域」とは、旧何町域のことでしょうか？",
+        choices: [
+            { text: "旧玄海町域", isCorrect: true },
+            { text: "旧大島村域", isCorrect: false },
+            { text: "旧吉川村域", isCorrect: false },
+            { text: "旧福間町域", isCorrect: false }
+        ],
+        explanation: "開発の舞台となったエリアは、JR鹿児島本線赤間駅の北約1.2キロメートルに位置しており、赤間駅周辺と「旧玄海町域」を結ぶ交通の要所でした。"
+    },
+    {
+        difficulty: "超上級",
+        question: "Q12. 初期の「土穴・須恵土地区画整理事業」の開発エリアが隣接していた、宗像市の主要幹線道路の正式名称は「都市計画道路〇〇〇〇線」です。〇〇〇〇に入る名称は何でしょうか？",
+        choices: [
+            { text: "石丸河東線", isCorrect: true },
+            { text: "赤間自由ヶ丘線", isCorrect: false },
+            { text: "宗像神湊線", isCorrect: false },
+            { text: "土穴赤間線", isCorrect: false }
+        ],
+        explanation: "「土穴・須恵土地区画整理事業」のエリアは、宗像市の主要幹線道路である「都市計画道路石丸河東線」に隣接する形で位置し、インフラ整備が進められました。"
     }
 ];
 
@@ -172,7 +194,7 @@ function showQuestion() {
     const currentQuestion = quizData[currentQuestionIndex];
     
     // Set Header Info
-    questionNumberEl.textContent = `第 ${currentQuestionIndex + 1} 問 / 10`;
+    questionNumberEl.textContent = `第 ${currentQuestionIndex + 1} 問 / ${quizData.length}`;
     difficultyBadgeEl.textContent = currentQuestion.difficulty;
     
     // Set Difficulty Color
@@ -182,9 +204,12 @@ function showQuestion() {
     } else if (currentQuestion.difficulty === "中級") {
         difficultyBadgeEl.style.color = "#06b6d4"; // Cyan
         difficultyBadgeEl.style.borderColor = "rgba(6, 182, 212, 0.3)";
-    } else {
+    } else if (currentQuestion.difficulty === "上級") {
         difficultyBadgeEl.style.color = "#f59e0b"; // Amber
         difficultyBadgeEl.style.borderColor = "rgba(245, 158, 11, 0.3)";
+    } else {
+        difficultyBadgeEl.style.color = "#a855f7"; // Purple for 超上級
+        difficultyBadgeEl.style.borderColor = "rgba(168, 85, 247, 0.3)";
     }
     
     // Progress Bar
@@ -281,13 +306,13 @@ function showResult() {
     let rankTitle = '';
     let rankDesc = '';
     
-    if (score === 10) {
+    if (score === 12) {
         rankTitle = '👑 くりえいとマスター';
         rankDesc = '完璧です！あなた以上に「くりえいと」の歴史と取り組みに詳しい人はいません。地域づくりのリーダーになれる知識の持ち主です！';
-    } else if (score >= 7) {
+    } else if (score >= 9) {
         rankTitle = '🌟 くりえいとエキスパート';
         rankDesc = '素晴らしい！くりえいと宗像の歩みや地域貢献について非常に深い知識を持っています。友人に自慢しましょう！';
-    } else if (score >= 4) {
+    } else if (score >= 5) {
         rankTitle = '🏃 くりえいとサポーター';
         rankDesc = 'なかなかの好成績です！このクイズを通して、さらにくりえいとの魅力的なまちづくりについて理解が深まりましたね！';
     } else {
@@ -299,7 +324,7 @@ function showResult() {
     rankDescEl.textContent = rankDesc;
     
     // Set Share Link
-    const shareText = `【株式会社くりえいとクイズ】10問中${score}問正解！私の「くりえいと度」は「${rankTitle.replace(/[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF]/g, '').trim()}」でした！あなたも挑戦してみませんか？`;
+    const shareText = `【株式会社くりえいとクイズ】12問中${score}問正解！私の「くりえいと度」は「${rankTitle.replace(/[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF]/g, '').trim()}」でした！あなたも挑戦してみませんか？`;
     const shareUrl = 'https://munakata-pr.github.io/quiz-test/';
     shareBtn.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent('くりえいと,宗像市,クイズ')}`;
 }
